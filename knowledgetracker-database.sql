@@ -1,15 +1,15 @@
-CREATE SCHEMA IF NOT EXISTS `knowledgetracker` DEFAULT CHARACTER SET utf8 
+CREATE SCHEMA IF NOT EXISTS `knowledgetracker` DEFAULT CHARACTER SET utf8;
 CREATE TABLE IF NOT EXISTS `knowledgetracker`.`main_topic` (
   `id` INT NOT NULL,
   `name` VARCHAR(45) NULL,
   PRIMARY KEY (`id`))
-ENGINE = InnoDB
+ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `knowledgetracker`.`subtopic` (
   `id` INT NOT NULL,
   `title` VARCHAR(45) NULL,
   `complete_percentage` INT NULL,
   PRIMARY KEY (`id`))
-ENGINE = InnoDB
+ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `knowledgetracker`.`topic` (
   `id` INT NOT NULL,
   `title` VARCHAR(45) NULL,
@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS `knowledgetracker`.`topic` (
     REFERENCES `knowledgetracker`.`main_topic` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB
+ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `knowledgetracker`.`topic_has_subtopic` (
   `topic_id` INT NOT NULL,
   `subtopic_id` INT NOT NULL,
@@ -39,4 +39,4 @@ CREATE TABLE IF NOT EXISTS `knowledgetracker`.`topic_has_subtopic` (
     REFERENCES `knowledgetracker`.`subtopic` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB
+ENGINE = InnoDB;
