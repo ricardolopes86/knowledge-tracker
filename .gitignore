@@ -1,1 +1,7 @@
 .vscode/
+commands
+__pycache__/
+KnowledgeTracker.vpp.bak_000f
+knowledgetracker.vpp.bak_001d
+knowledgetracker.vpp.bak_000f
+venv/
