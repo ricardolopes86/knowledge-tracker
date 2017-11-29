@@ -1,4 +1,4 @@
-from app import app
+from app import app, db
 from models import MainTopic, Topic, SubTopic
 from flask import render_template
 
@@ -20,4 +20,5 @@ def add_subtopic():
 
 @app.route('/show/progress', methods=['GET'])
 def show_progress():
-    return render_template('show_progress.html')
+    maintopics = db.session.query(MainTopic).all()
+    return render_template('show_progress.html', maintopics=maintopics)
