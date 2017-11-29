@@ -1,0 +1,6 @@
+sudo yum install mariadb-devel ou mysql-community-devel-5.7.20-1.el7.x86_64
+pip install mysql-python
+
+create user 'knowledgetracker'@'localhost' identified by 'p@ssw0rd';
+grant all privileges on * . * to 'knowledgetracker'@'localhost';
+flush privileges;
