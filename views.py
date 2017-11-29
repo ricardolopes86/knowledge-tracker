@@ -21,4 +21,6 @@ def add_subtopic():
 @app.route('/show/progress', methods=['GET'])
 def show_progress():
     maintopics = db.session.query(MainTopic).all()
-    return render_template('show_progress.html', maintopics=maintopics)
+    topics = db.session.query(Topic).all()
+    subtopics = db.session.query(SubTopic).all()
+    return render_template('show_progress.html', maintopics=maintopics, topics=topics, subtopics=subtopics)

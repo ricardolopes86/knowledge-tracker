@@ -11,16 +11,20 @@
         </div>
 
         <div id="collapse{{maintopic.id}}" class="collapse show" role="tabpanel" aria-labelledby="head{{maintopic.id}}" data-parent="#accordion">
+            {% for topic in topics %}
             <div class="card-body">
-                <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                    Topic
+                <a class="btn btn-primary" data-toggle="collapse" href="#topic{{topic.title}}{{topic.id}}" aria-expanded="false" aria-controls="topic{{topic.title}}{{topic.id}}">
+                    {{topic.title}}
                 </a>
-                <div class="collapse" id="collapseExample">
+                {% for subtopic in subtopics %}
+                <div class="collapse" id="topic{{topic.title}}{{topic.id}}">
                     <div class="card-body">
-                        SubTopic
+                        {{subtopic.title}}
                     </div>
                 </div>
+                {% endfor %}
             </div>
+            {% endfor %}
         </div>
     </div>
     {% endfor %}
